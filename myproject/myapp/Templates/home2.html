@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salary Prediction</title>
+    <style>
+        body {
+            font-family:Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #555c7069; 
+        }
+        form {
+            max-width: 400px;
+            margin: auto;
+
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+       
+        #logoutBtn {
+            background-color: #f44336;
+        }
+        #logoutBtn:hover {
+            background-color: #d32f2f;
+        }
+    </style>
+</head>
+<body>
+    <h1>Salary Prediction</h1>
+    
+    <form id="salaryForm">
+        <label for="yearsOfExperience">Years of Experience:</label>
+        <input type="number" id="yearsOfExperience" name="yearsOfExperience" required>
+
+        <label for="educationLevel">Education Level:</label>
+        <select id="educationLevel" name="educationLevel" required>
+            <option value="highSchool">High School</option>
+            <option value="bachelors">Bachelor's Degree</option>
+            <option value="masters">Master's Degree</option>
+        </select>
+
+        <label for="jobPosition">Job Position:</label>
+        <input type="text" id="jobPosition" name="jobPosition" required>
+
+        <button type="button" onclick="predictSalary()">Predict Salary</button>
+    </form>
+
+    <div id="result" style="margin-top: 20px;"></div>
+    <button id="logoutBtn" onclick="logout()">Logout</button>
+
+    <script>
+        function predictSalary() {
+            var resultElement = document.getElementById("result");
+            resultElement.innerHTML = "<p>Salary prediction: $80,000</p>";
+        }
+
+        function logout() {
+           
+            alert("Logged out!");
+        }
+    </script>
+</body>
+</html>
+
